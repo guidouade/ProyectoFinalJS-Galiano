@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Promedio de Edad</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <h1>CALCULADORA DE PROMEDIO DE EDAD</h1>
+    <h3>Ingrese el nombre de la persona y su edad, y haga clic en "Agregar Persona" para agregarlo al cálculo de edades. Si quiere calcular el promedio de edad final, oprima "Calcular Promedio"</h3>
+    <input type="string" id="nombreInput" placeholder="Ingrese un nombre">
+    <input type="number" id="edadInput" placeholder="Ingrese una edad">
+    <button id="agregar-persona">Agregar Persona</button>
+    <button id="calcular-promedio">Calcular Promedio</button>
+    <div id="personas-lista"> 
+        <ul>
+            <!-- Aquí se mostrarán las personas agregadas -->
+        </ul>
+    </div>
+    <h4 id="resultado-promedio"></h4>
+
+    <script src="jscript.js"> </script>
+</body>
+</html>
