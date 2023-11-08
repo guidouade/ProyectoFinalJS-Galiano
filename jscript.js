@@ -103,7 +103,7 @@ function guardarPersonasEnLocalStorage(personas) {
 }
 
 // Función para cargar la lista de personas desde el Local Storage
-function cargarPersonasDesdeLocalStorage(personas) {
+function cargarPersonasDesdeLocalStorage() {
   const personasJSON = localStorage.getItem('personas');
   if (personasJSON) {
     personas = JSON.parse(personasJSON);
@@ -131,7 +131,7 @@ function calcularEdadPromedio() {
 }
 
 // Llamamos a la función para cargar la lista de personas al inicio
-cargarPersonasDesdeLocalStorage(personas);
+cargarPersonasDesdeLocalStorage();
 
 // Nueva función para cargar datos desde una API o archivo JSON
 function cargarPersonasDesdeAPI() {
