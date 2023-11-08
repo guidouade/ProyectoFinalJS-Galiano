@@ -85,7 +85,7 @@ function renderizarPersonas() {
 }
 
 // Función para guardar la lista de personas en el Local Storage
-function guardarPersonasEnLocalStorage() {
+function guardarPersonasEnLocalStorage(personas) {
   return new Promise((resolve, reject) => {
     try {
       localStorage.setItem('personas', JSON.stringify(personas));
@@ -103,7 +103,7 @@ function guardarPersonasEnLocalStorage() {
 }
 
 // Función para cargar la lista de personas desde el Local Storage
-function cargarPersonasDesdeLocalStorage() {
+function cargarPersonasDesdeLocalStorage(personas) {
   const personasJSON = localStorage.getItem('personas');
   if (personasJSON) {
     personas = JSON.parse(personasJSON);
@@ -131,7 +131,7 @@ function calcularEdadPromedio() {
 }
 
 // Llamamos a la función para cargar la lista de personas al inicio
-cargarPersonasDesdeLocalStorage();
+cargarPersonasDesdeLocalStorage(personas);
 
 // Nueva función para cargar datos desde una API o archivo JSON
 function cargarPersonasDesdeAPI() {
@@ -139,8 +139,8 @@ function cargarPersonasDesdeAPI() {
     .then((response) => response.json())
     .then((data) => {
       const personas = data.personas;
-      renderizarPersonas();
-      guardarPersonasEnLocalStorage();
+      renderizarPersonas(personas);
+      guardarPersonasEnLocalStorage(personas);
     })
     .catch((error) => {
       console.error('Error al cargar datos el JSON:', error);
